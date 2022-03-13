@@ -12,4 +12,19 @@ describe('sponge-bobator', () => {
     <div class="pad"></div>
     </sponge-bobator>`);
   });
+
+  it('rEnDeRs CoRrEcTlY', async () => {
+    const { root } = await newSpecPage({
+      components: [SpongeBobator],
+      html: '<sponge-bobator text="hello" />',
+    });
+    expect(root).toEqualHtml(`
+      <sponge-bobator text="hello">
+      <div class="pad">
+      HeLlO
+      </div>
+      </sponge-bobator>`);
+  });
+
+  
 });
